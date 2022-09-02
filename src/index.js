@@ -11,6 +11,7 @@ form.addEventListener('submit', (e) => {
 });
 
 btn.addEventListener('click', async () => {
+    if (input.value === '') return;
     const units = checkUnit();
     const data = await getWeatherData(input.value, units);
     renderWeatherData(data);

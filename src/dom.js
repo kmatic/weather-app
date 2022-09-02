@@ -1,4 +1,6 @@
 function renderWeatherData(data) {
+    if (!data) return;
+
     const city = document.querySelector('.city');
     const mainTemp = document.querySelector('.main-temp');
     const mainWeather = document.querySelector('.weather-main');
@@ -39,9 +41,9 @@ function checkUnit() {
 function convertSpeed(speed) {
     const units = checkUnit();
     if (units === 'metric') {
-        return Math.round(speed * 3.6);
+        return Math.round((speed * 3.6) * 10) / 10;
     } else {
-        return Math.round(speed * 1.60934 );
+        return Math.round((speed * 1.60934) * 10) / 10;
     }
 }
 
