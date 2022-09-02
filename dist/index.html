@@ -6,12 +6,58 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Weather App</title>
     <script src='main.js' defer></script>
+    <script src="https://kit.fontawesome.com/37b2e508a0.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='style.css'>
 </head>
 <body>
-    <form>
-        <input type='text'>
-        <button>Search</button>
-    </form>
+    <header>
+        <div class='title'>
+            <i class="fa-solid fa-cloud-sun-rain"></i>
+            <h1>Weather App</h1>
+        </div>
+        <form>
+            <input type='text' id='cityName' name='cityName' placeholder='Enter a city'>
+            <button>Search</button>
+        </form>
+        <div class='temp-toggle'>
+            <p>&#8451; / &#8457;</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+    <main>
+        <div class='summary'>
+            <div class='summary-details'>
+                <p class='city'>Vancouver</p>
+                <p class='main-temp'>27&deg;</p>
+                <p class='weather-main'>Sunny</p>
+                <p class='high-low'>H: 28&deg; L: 17&deg;</p>
+            </div>
+            <div class='main-image'>
+                <img src='http://openweathermap.org/img/wn/10d@2x.png' alt='weather'>
+            </div>
+        </div>
+        <div class='summary-additional'>
+            <div class='additional-item'>
+                <div class='additional-title'>Description</div>
+                <div class='additional-text'>Light rain</div>
+            </div>
+            <div class='additional-item'>
+                <div class='additional-title'>Feels Like</div>
+                <div class='additional-text'>30.0&deg;</div>
+            </div>
+            <div class='additional-item'>
+                <div class='additional-title'>Humidity</div>
+                <div class='additional-text'>99%</div>
+            </div>
+            <div class='additional-item'>
+                <div class='additional-title'>Wind Speed</div>
+                <div class='additional-text'>40 km/h</div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>
