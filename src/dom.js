@@ -19,7 +19,7 @@ function renderWeatherData(data) {
     mainTemp.textContent = `${data.temperature}\u00B0`;
     mainWeather.textContent = data.main;
     highLow.textContent = `H: ${data.high}\u00B0 L: ${data.low}\u00B0`;
-    imgIcon.src = `http://openweathermap.org/img/wn/${data.icon}@2x.png`;
+    imgIcon.src = `https://openweathermap.org/img/wn/${data.icon}@2x.png`;
 
     feels.textContent = `${data.feels}\u00B0`;
     humidity.textContent = `${data.humidity}%`;
