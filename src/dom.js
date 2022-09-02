@@ -29,9 +29,9 @@ function renderWeatherData(data) {
 function checkUnit() {
     const unitSlider = document.querySelector('input[type="checkbox"');
     if (!unitSlider.checked) {
-        return false;
+        return 'metric';
     }
-    return true;
+    return 'imperial';
 }
 
 export { renderWeatherData, checkUnit };

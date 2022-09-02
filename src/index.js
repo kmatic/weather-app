@@ -2,22 +2,30 @@ import getWeatherData from './weather';
 import { renderWeatherData, checkUnit } from './dom';
 
 const btn = document.querySelector('button');
-const input = document.querySelector('input');
+const input = document.querySelector('#cityName');
 const form = document.querySelector('form');
+const slider = document.querySelector('input[type="checkbox"]');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 });
 
 btn.addEventListener('click', async () => {
-    const data = await getWeatherData(input.value);
-    console.log(data);
+    const units = checkUnit();
+    const data = await getWeatherData(input.value, units);
     renderWeatherData(data);
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const data = await getWeatherData('Vancouver');
+    const units = checkUnit();
+    const data = await getWeatherData('Vancouver', units);
     renderWeatherData(data);
 });
 
-console.log(document.querySelector('input[type="checkbox"').checked);
+slider.addEventListener('click', async () => {
+    const currentCity = document.querySelector('.city').textContent;
+    console.log(currentCity);
+    const units = checkUnit();
+    const data = await getWeatherData(currentCity, units);
+    renderWeatherData(data);
+});
