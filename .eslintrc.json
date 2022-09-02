@@ -13,6 +13,7 @@
     "rules": {
         "no-console": "off",
         "indent": ["error", 4],
-        "no-alert": "off"
+        "no-alert": "off",
+        "no-use-before-define": "warn",
     }
 }

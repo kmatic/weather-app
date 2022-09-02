@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 slider.addEventListener('click', async () => {
     const currentCity = document.querySelector('.city').textContent;
-    console.log(currentCity);
     const units = checkUnit();
     const data = await getWeatherData(currentCity, units);
     renderWeatherData(data);

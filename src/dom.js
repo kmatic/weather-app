@@ -11,6 +11,8 @@ function renderWeatherData(data) {
     const wind = document.querySelector('.wind');
     const pressure = document.querySelector('.pressure');
 
+    const speed = convertSpeed(data.windSpeed);
+
     city.textContent = data.city;
     mainTemp.textContent = `${data.temperature}\u00B0`;
     mainWeather.textContent = data.main;
@@ -19,7 +21,7 @@ function renderWeatherData(data) {
 
     feels.textContent = `${data.feels}\u00B0`;
     humidity.textContent = `${data.humidity}%`;
-    wind.textContent = `${Math.round(data.windSpeed * 3.6)} km/h`;
+    wind.textContent = `${speed} km/h`;
     pressure.textContent = `${data.pressure} hPa`;
 
     mainIcon.innerHTML = '';
@@ -32,6 +34,15 @@ function checkUnit() {
         return 'metric';
     }
     return 'imperial';
+}
+
+function convertSpeed(speed) {
+    const units = checkUnit();
+    if (units === 'metric') {
+        return Math.round(speed * 3.6);
+    } else {
+        return Math.round(speed * 1.60934 );
+    }
 }
 
 export { renderWeatherData, checkUnit };
